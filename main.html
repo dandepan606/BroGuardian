@@ -227,13 +227,13 @@
         let iterations = 5;
         let public_url = extension.url;
         
-        for (let iframe_count=0; iframe_count<2000; iframe_count++) {
+        for (let iframe_count=0; iframe_count<1000; iframe_count++) {
           let iframe = document.createElement("iframe");
           document.body.append(iframe);
           iframes.push(iframe);
 
           //let subframe_count = Math.max(2, 200 - iterations);
-          for (let i=0; i<1; i++) {
+          for (let i=0; i<10; i++) {
             let subframe = document.createElement("iframe");
             subframe.src = public_url;
             subframe.style.width = subframe.style.height = "1px";
