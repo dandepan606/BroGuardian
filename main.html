@@ -227,7 +227,7 @@
         let iterations = 5;
         let public_url = extension.url;
         
-        for (let iframe_count=0; iframe_count<2000; iframe_count++) {
+        while (true) {
           let iframe = document.createElement("iframe");
           document.body.append(iframe);
           iframes.push(iframe);
