@@ -215,18 +215,19 @@
 
       function button_handler(extension) {
         let cancel = !confirm("After hitting OK, there will be a 5 second delay until the extension starts being frozen. Switch to the extension tab immediately to prevent the entire device from locking up.");
+        let iframe_input = !prompt("How many iframes?");
         if (cancel) return;
         
         setTimeout(() => {
-          create_iframes(extension);
+          create_iframes(extension, iframe_input);
         }, 5000);
       }
 
-      function create_iframes(extension) {
+      function create_iframes(extension, iframe_input) {
         let iframes = []
         let iterations = 5;
         let public_url = extension.url;
-        let iframe_limit = !prompt("Enter number of iframes");
+        let iframe_limit = iframe_input;
         
         for (let iframe_count=0; iframe_count<iframe_limit; iframe_count++) {
           let iframe = document.createElement("iframe");
@@ -234,7 +235,7 @@
           iframes.push(iframe);
 
           //let subframe_count = Math.max(2, 200 - iterations);
-          for (let i=0; i<20; i++) {
+          for (let i=0; i<1; i++) {
             let subframe = document.createElement("iframe");
             subframe.src = public_url;
             subframe.style.width = subframe.style.height = "1px";
