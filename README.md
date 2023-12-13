@@ -1,11 +1,11 @@
-# Dextensify
-Dextensify is an exploit which lets you disable most admin-installed Chrome extensions from any webpage. It can be used from regular websites, HTML files, and data URLs.
+# BroGuardian
+BroGuardian is an exploit which lets you disable most admin-installed Chrome extensions from any webpage. It can be used from regular websites, HTML files, and data URLs.
 
 For the exploit itself, visit one of the following links:
- - https://dextensify.ading.dev/
- - https://dextensify.pages.dev/
+ - https://BroGuardian.ading.dev/
+ - https://BroGuardian.pages.dev/
 
-An explanation is available on [my website](https://ading.dev/blog/posts/dextensify.html).
+An explanation is available on [my website](https://ading.dev/blog/posts/BroGuardian.html).
 
 ## Supported Extensions:
 |Extension Name|Extension ID|
@@ -37,7 +37,7 @@ An explanation is available on [my website](https://ading.dev/blog/posts/dextens
 This repository is licensed under the MIT License.
 
 ```
-Copyright (c) 2023 ading2210
+Copyright (c) 2023 dandepan303
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
